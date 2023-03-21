@@ -340,7 +340,7 @@ export default function (props: {
 
   return (
     <div ref={containerRef!} class="mt-2">
-      <div class="px-1em mb-6em">
+      <div class="px-1em mb-8em">
         <div
           id="message-container"
           class="px-1em"
@@ -365,7 +365,7 @@ export default function (props: {
         </div>
       </div>
       <div
-        class="pb-2em px-2em fixed bottom-0 z-100 op-0"
+        class="pb-1em px-2em fixed bottom-0 z-100 op-0"
         style={
           containerWidth() === "init"
             ? {}
