@@ -4,10 +4,10 @@ import ThemeToggle from "./ThemeToggle.astro"
 ---
 
 <header class="sticky top--100px z-99">
-  <div class="w-100px h-100px logo">
-    <Logo />
-  </div>
   <div class="flex justify-between items-center">
+    <!-- <div class="w-100px h-100px logo">
+      <Logo />
+    </div> -->
     <div
       class="flex items-center mt-4 pb-4 text-2xl title cursor-pointer"
       onclick="scrollToTop()"
@@ -38,13 +38,13 @@ import ThemeToggle from "./ThemeToggle.astro"
   .after #themeToggle,
   .after .logo,
   .after #message-container {
-    transition-property: transform, opacity;
+    /* transition-property: transform, opacity;
     transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out; */
   }
 
   .before .logo {
-    transform: translate3D(25px, 150px, 0) scale(2);
+    /* transform: translate3D(25px, 150px, 0) scale(2); */
   }
 
   .before #themeToggle {
@@ -53,7 +53,7 @@ import ThemeToggle from "./ThemeToggle.astro"
 
   .before .title,
   .before #message-container {
-    transform: translate3D(0, 200px, 0);
+    /* transform: translate3D(0, 200px, 0); */
   }
 
   .before #themeToggle,
