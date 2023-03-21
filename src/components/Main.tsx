@@ -256,7 +256,7 @@ export default function (props: {
     while (!done) {
       const { value, done: readerDone } = await reader.read()
       if (value) {
-        let char = decoder.decode(value)
+        const char = decoder.decode(value)
         if (char === "\n" && currentAssistantMessage().endsWith("\n")) {
           continue
         }
@@ -333,36 +333,39 @@ export default function (props: {
       }px`
     )
     if (!compositionend()) return
-    let { value } = inputRef
+    const { value } = inputRef
     setInputContent(value)
     find(value)
   }
 
   return (
-    <div ref={containerRef!} class="md:mt-0 mt-2">
-      <div
-        id="message-container"
-        style={{
-          "background-color": "var(--c-bg)"
-        }}
-      >
-        <For each={messageList()}>
-          {(message, index) => (
-            <MessageItem
-              role={message.role}
-              message={message.content}
-              index={index()}
-              setInputContent={setInputContent}
-              setMessageList={setMessageList}
-            />
+    <div ref={containerRef!} class="mt-2">
+      <div class="px-1em mb-6em">
+        <div
+          id="message-container"
+          class="px-1em"
+          style={{
+            "background-color": "var(--c-bg)"
+          }}
+        >
+          <For each={messageList()}>
+            {(message, index) => (
+              <MessageItem
+                role={message.role}
+                message={message.content}
+                index={index()}
+                setInputContent={setInputContent}
+                setMessageList={setMessageList}
+              />
+            )}
+          </For>
+          {currentAssistantMessage() && (
+            <MessageItem role="assistant" message={currentAssistantMessage()} />
           )}
-        </For>
-        {currentAssistantMessage() && (
-          <MessageItem role="assistant" message={currentAssistantMessage()} />
-        )}
+        </div>
       </div>
       <div
-        class="pb-2em fixed bottom-0 z-100 op-0"
+        class="pb-2em px-2em fixed bottom-0 z-100 op-0"
         style={
           containerWidth() === "init"
             ? {}
