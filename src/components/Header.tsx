@@ -33,21 +33,6 @@ export default function Header() {
   const iconTitle = createMemo(() => splitEmoji(store.sessionSettings.title))
   return (
     <>
-      <div
-        id="logo"
-        class="pl-1em cursor-pointer inline-block"
-        onClick={() => {
-          navigate("/", { replace: true })
-          loadSession("index")
-        }}
-      >
-        <Show
-          when={iconTitle().icon}
-          fallback={<div class="w-8em h-8em" innerHTML={logo} />}
-        >
-          <div class="text-7em h-1em mb-8">{iconTitle().icon}</div>
-        </Show>
-      </div>
       <header class="px-4 py-2 sticky top-0 z-99 flex justify-between items-center">
         <div
           class="flex items-center text-2xl cursor-pointer"
@@ -65,24 +50,6 @@ export default function Header() {
                 <span class="ml-1 font-extrabold text-slate-7 dark:text-slate">
                   Vercel
                 </span>
-                <a
-                  class="ml-2 <sm:hidden"
-                  href="https://github.com/ourongxing/chatgpt-vercel"
-                >
-                  <img
-                    alt="GitHub forks badge"
-                    src="https://img.shields.io/github/stars/ourongxing/chatgpt-vercel?logo=github"
-                  />
-                </a>
-                <a
-                  class="ml-2"
-                  href="https://github.com/ourongxing/chatgpt-vercel/fork"
-                >
-                  <img
-                    alt="GitHub forks badge"
-                    src="https://img.shields.io/github/forks/ourongxing/chatgpt-vercel?logo=github"
-                  />
-                </a>
               </>
             }
           >
