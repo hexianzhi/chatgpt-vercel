@@ -29,7 +29,7 @@ export const defaultEnv = {
     "gpt-3.5": 16 * 1000,
     "gpt-4": 32 * 1000
   } as Record<SimpleModel, number>,
-  OPENAI_API_BASE_URL: "api.openai.com",
+  OPENAI_API_BASE_URL: "azureapi.gedune.space",
   OPENAI_API_KEY: "",
   TIMEOUT: 30000,
   PASSWORD: "",
