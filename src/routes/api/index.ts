@@ -92,7 +92,8 @@ export async function POST({ request }: APIEvent) {
 
     const encoder = new TextEncoder()
     const decoder = new TextDecoder()
-
+    console.log('baseURL: ', baseURL)
+    console.log('apiKey: ', apiKey)
     const rawRes = await fetchWithTimeout(
       `https://${baseURL}/v1/chat/completions`,
       {
